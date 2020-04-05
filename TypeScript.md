@@ -2,7 +2,7 @@
 
 2020-4-3
 学习前提：ES6+JS
-2012年由微软发布，场景：angela、vue、react
+2012年由微软发布，场景：Angular、Vue、React
 TypeScript(ES6(ES5)),超级Javascript,将轻量的语法带入JS中，对
 **静态类型、面向对象**支持良好，可使用JS之外的**扩展语法**，利于构建**健壮的、可维护的**大型项目
 
