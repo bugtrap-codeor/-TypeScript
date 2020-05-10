@@ -1,0 +1,53 @@
+<!DoCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // //src="./main.js "
+        // var list = [{
+        //     name: "小丽",
+        //     age: 20
+        // }, {
+        //     name: "小明",
+        //     age: 22
+        // }]
+
+        // function makeString(data) {
+        //     var tplArr = ['<table><td>name</td><td>age</td>']
+        //     for (var i = 0; i < data.length; i++) {
+        //         tplArr.push('<tr><td>' + data[i].name + '</td><td>' + data[i].age + '</td></tr>')
+        //     }
+        //     tplArr.push('</table>')
+        //     return tplArr.join('')
+        // }
+        const list = [{
+            name: "小丽",
+            age: 20
+        }, {
+            name: "小明",
+            age: 22
+        }]
+
+        function makeString(data) {
+            let body = ''
+            for (let item of data) {
+                body += `<tr><td>${item.name}</td><td>${item.age}</td></tr>`
+            }
+            return `
+        <table>
+            <td>name</td><td>age</td>
+            ${body}
+        </table>
+        `
+        }
+        document.write(makeString(list));
+        console.log(makeString(list));
+    </script>
+</body>
+
+</html>
