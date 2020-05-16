@@ -149,3 +149,55 @@ for(var i=0;i<3;i++){
 }
 
 同步优先于异步优先于回调
+
+### 2-6Array遍历、转换、生成、查找
+
+```node
+ES5中数组遍历有多少种方法？他们有什么优势和缺点？
+`lesson2-2.js`
+// for循环
+// forEach  ES5新增API  不支持continue和break
+// every  ES5新增API  默认返回false，不进行下一次遍历
+// for in 为 `object`设计，数组是对象，数组可遍历
+
+// for of ES6新增 允许自定义数据结构 ->可遍历
+
+ES5中将伪数组转换成数组该怎么办?ES6中如何做呢？
+`集合调用不了数组的API` -> 可转换
+// 伪数组2特征：按索引方式存储数据、具length属性
+初始化并都赋值为1长度为5的数组实践
+// for循环 ->
+// Array.from(arrayLike 伪数组,mapFn map函数,thisArg 接收参数)
+// let array = Array.from({ length: 5 }, function () { return 1 })  ->
+// let array = Array(5).fill(1)
+
+ES5中创建一个新数组该怎么做？ES6中如何做呢？
+ES5生成新数组:
+let array = Array(5)
+let array = []
+Array.push(1)
+ES6:
+// Array.fill(value,start,end)    start、end默认为第一个和最后一个
+let array = [1, 2, 3, 4, 5]
+console.log(array.fill(8, 2, 4))  //1，2，8，8，5
+
+ES5中如何查找一个元素呢？ES6中如何做呢？
+// ES5查找
+let find = array.filter(function (item) {
+  return item % 2 === 0   //所有元素为偶数
+})
+console.log(find)         filter返回数组，缺陷：数组长度大，想查询是否有某元素，低效（会遍历所有）
+// ES6查找   Array.prototype.find
+let find = array.find(function (item) {
+  return item % 2 === 0
+})
+console.log(find)  //find返回满足条件第一个值，不再继续寻找
+let findIndex = array.findIndex(function (item) {
+  return item % 2 === 0
+})
+console.log(findIndex)  //返回值的索引
+练习1.JavaScript世界里有哪些元素是可遍历的？
+    2.如何给数据结构自定义遍历？
+    3.find()和ES5的filter（）有什么区别？
+2-11
+```
